@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#062f4f">
   <title>Laboratorio Dental Tláhuac · Catálogo de precios 2026</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23062f6f'/%3E%3Ctext x='8' y='42' font-size='28' font-family='Arial Black, Arial' fill='white'%3ELD%3C/text%3E%3Ctext x='38' y='42' font-size='28' font-family='Arial Black, Arial' fill='%2338bdf8'%3ET%3C/text%3E%3Cpath d='M18 13c6-9 18-8 23 0 7-8 18-5 19 6' fill='none' stroke='%2338bdf8' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
   <style>
     :root {
       --navy:#062f4f;
@@ -92,6 +93,35 @@
     }
     .brand-text strong { display:block; font-size:14px; letter-spacing:.08em; text-transform:uppercase; }
     .brand-text span { display:block; color:rgba(255,255,255,.74); font-size:13px; }
+    /* Logotipo elegido: Propuesta B */
+    .brand { text-decoration:none; }
+    .brand-logo-card {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:0;
+      min-width:0;
+      padding:9px 12px;
+      border-radius:22px;
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(255,255,255,.74);
+      box-shadow:0 16px 34px rgba(0,0,0,.18);
+      backdrop-filter:blur(14px);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .brand-logo-card:hover { transform:translateY(-1px); box-shadow:0 20px 42px rgba(0,0,0,.2); }
+    .ldt-logo {
+      display:block;
+      width:min(365px, 68vw);
+      height:auto;
+      overflow:visible;
+    }
+    @media (max-width: 560px) {
+      .topbar { align-items:flex-start; margin-bottom:26px; }
+      .brand-logo-card { padding:7px 9px; border-radius:18px; }
+      .ldt-logo { width:min(292px, calc(100vw - 64px)); }
+    }
+
     .vigencia {
       display:none;
       padding:10px 14px;
@@ -417,13 +447,45 @@
   <header class="hero" id="inicio">
     <div class="wrap hero-inner">
       <div class="topbar">
-        <div class="brand" aria-label="Laboratorio Dental Tláhuac">
-          <div class="brand-mark">LDT</div>
-          <div class="brand-text">
-            <strong>Laboratorio Dental Tláhuac</strong>
-            <span>Catálogo para clínicas dentales</span>
-          </div>
-        </div>
+        <a class="brand brand-logo-card" href="#inicio" aria-label="Laboratorio Dental Tláhuac">
+          <svg class="ldt-logo" viewBox="0 0 680 190" role="img" aria-labelledby="ldtLogoTitle ldtLogoDesc">
+            <title id="ldtLogoTitle">Laboratorio Dental Tláhuac</title>
+            <desc id="ldtLogoDesc">Logotipo moderno LDT con ícono de diente, sonrisa y nombre del laboratorio.</desc>
+            <defs>
+              <linearGradient id="ldtBlue" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#062f6f"/>
+                <stop offset="0.55" stop-color="#0a3f86"/>
+                <stop offset="1" stop-color="#0ea5e9"/>
+              </linearGradient>
+              <linearGradient id="ldtCyan" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#159de8"/>
+                <stop offset="1" stop-color="#38bdf8"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Marca LDT / diente -->
+            <g transform="translate(18 8)">
+              <path d="M96 33 C112 7 153 6 170 32 C188 6 229 7 246 33 C260 56 249 88 238 112"
+                    fill="none" stroke="url(#ldtCyan)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M42 129 C83 160 174 168 243 128"
+                    fill="none" stroke="#062f6f" stroke-width="10" stroke-linecap="round"/>
+              <path d="M55 119 C103 147 168 148 223 116"
+                    fill="none" stroke="url(#ldtBlue)" stroke-width="5" stroke-linecap="round" opacity=".86"/>
+              <text x="0" y="114" font-family="Montserrat, Arial Black, Arial, sans-serif" font-size="92" font-weight="900" letter-spacing="-8" fill="#062f6f">LD</text>
+              <text x="156" y="114" font-family="Montserrat, Arial Black, Arial, sans-serif" font-size="92" font-weight="900" letter-spacing="-8" fill="url(#ldtCyan)">T</text>
+            </g>
+
+            <!-- Nombre -->
+            <g transform="translate(296 38)">
+              <text x="0" y="36" font-family="Montserrat, Arial, sans-serif" font-size="32" font-weight="900" letter-spacing="3" fill="#062f6f">LABORATORIO</text>
+              <text x="0" y="74" font-family="Montserrat, Arial, sans-serif" font-size="32" font-weight="900" letter-spacing="3" fill="#062f6f">DENTAL</text>
+              <line x1="0" y1="99" x2="46" y2="99" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round"/>
+              <text x="62" y="108" font-family="Montserrat, Arial, sans-serif" font-size="29" font-weight="800" letter-spacing="12" fill="#0ea5e9">TLÁHUAC</text>
+              <line x1="255" y1="99" x2="305" y2="99" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round"/>
+              <text x="4" y="145" font-family="Montserrat, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="7" fill="#6b7c8e">PRECISIÓN • ESTÉTICA • CONFIANZA</text>
+            </g>
+          </svg>
+        </a>
         <div class="vigencia">Precios 2026 · Primer trimestre</div>
       </div>
       <div class="hero-grid">
